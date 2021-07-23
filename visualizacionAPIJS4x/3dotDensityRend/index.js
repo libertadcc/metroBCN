@@ -1,5 +1,4 @@
 import Map from 'https://js.arcgis.com/4.19/@arcgis/core/Map.js';
-import WebMap from 'https://js.arcgis.com/4.19/@arcgis/core/WebMap.js';
 import MapView from "https://js.arcgis.com/4.19/@arcgis/core/views/MapView.js";
 import FeatureLayer from "https://js.arcgis.com/4.19/@arcgis/core/layers/FeatureLayer.js";
 import Legend from "https://js.arcgis.com/4.19/@arcgis/core/widgets/Legend.js";
@@ -23,7 +22,6 @@ const popRenderer = {
     type: 'dot-density',
     dotValue: 100,
     outline: null,
-    referenceScale: 577790, // 1:577,790 view scale
     legendOptions: {
         unit: "people"
     },
@@ -69,7 +67,7 @@ const popRenderer = {
             label: "Two or more races"
         }
     ]
-}
+};
 
 const populationLayer = new FeatureLayer({ // polígonos
     url: 'https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/ACS_Population_by_Race_and_Hispanic_Origin_Boundaries/FeatureServer/2/',

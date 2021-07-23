@@ -30,7 +30,8 @@ const renderer = {
             maxDataValue: 60,
             minSize: 4,
             maxSize: 24
-        }, {
+        },
+         {
             type: "rotation",
             field: "WIND_DIRECT",
             rotationType: "geographic"

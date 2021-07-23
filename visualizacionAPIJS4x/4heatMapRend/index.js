@@ -37,6 +37,11 @@ const earthquakesLayer = new FeatureLayer({
     renderer: heatmapRenderer
 });
 
+map.add(earthquakesLayer);
+
+view.ui.add(new Legend({ view: view }), 'bottom-right');
+
+// Cambio renderizado según escala
 const simpleRenderer = {
     type: "simple",
     symbol: {
@@ -45,11 +50,6 @@ const simpleRenderer = {
         size: 15
     }
 };
-
-map.add(earthquakesLayer);
-
-view.ui.add(new Legend({ view: view }), 'bottom-right');
-
 
 view.watch("scale", function (newValue) {
     earthquakesLayer.renderer = newValue <= 100000 ? simpleRenderer : heatmapRenderer;

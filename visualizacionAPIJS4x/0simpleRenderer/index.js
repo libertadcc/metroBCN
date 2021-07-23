@@ -1,6 +1,7 @@
 import Map from 'https://js.arcgis.com/4.19/@arcgis/core/Map.js'
 import MapView from "https://js.arcgis.com/4.19/@arcgis/core/views/MapView.js";
 import FeatureLayer from "https://js.arcgis.com/4.19/@arcgis/core/layers/FeatureLayer.js";
+import Legend from "https://js.arcgis.com/4.19/@arcgis/core/widgets/Legend.js";
 import esriConfig from "https://js.arcgis.com/4.19/@arcgis/core/config.js";
 
 esriConfig.apiKey = "AAPK910bc52162d04535b4b2e399d655b842-B8-L-B-bSHMrLN2KVLmjffN-wrL_S3hXWvzpGoUceNidwHU5YxKxYF9dcKDp9xH";
@@ -35,14 +36,19 @@ const beachRenderer = {
     // { //https://img.icons8.com/bubbles/2x/4a90e2/beach.png
     //     type: "picture-marker",
     //     url: "https://img.icons8.com/bubbles/2x/4a90e2/beach.png",
-    //     width: 200,
-    //     height: 200
-    //   }
+    //     width: 20,
+    //     height: 20
+    // }
 };
 
 const beachLayer = new FeatureLayer({
     url: 'https://services1.arcgis.com/nCKYwcSONQTkPA4K/arcgis/rest/services/Playas_2015/FeatureServer/0',
-    renderer: beachRenderer
+    //definitionExpression: "Provincia = 'Pontevedra'",
+    renderer: beachRenderer,
+    // popupTemplate: {
+    //     title: '{Nombre}',
+    //     content: '{Descripci}'
+    // }
 });
 
 const railwayRenderers = {
@@ -74,3 +80,10 @@ const provLayer = new FeatureLayer({
 });
 
 map.addMany([provLayer, railwayNetworkLayer, beachLayer]);
+
+
+let legend = new Legend({
+    view: view,
+});
+
+view.ui.add(legend, "bottom-right");

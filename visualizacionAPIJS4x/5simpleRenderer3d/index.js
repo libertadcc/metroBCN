@@ -59,13 +59,14 @@ const beachLayer = new FeatureLayer({
     symbol: {
       // webstyle https://developers.arcgis.com/javascript/latest/visualization/symbols-color-ramps/esri-web-style-symbols-3d/#basic-shapes
       type: "web-style", // autocasts as new WebStyleSymbol()
-      name: "Chilopsis",
-      styleName: "EsriThematicTreesStyle"
+      // name: "Chilopsis",
+      // styleName: "EsriThematicTreesStyle"
+
       // styleName: "EsriRealisticTreesStyle"
       
       // ---- Icono 2D ---
-      // name: "Standing Star",
-      // styleName: "EsriIconsStyle"
+      name: "Standing Star",
+      styleName: "EsriIconsStyle"
     }
   }
 });

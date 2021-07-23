@@ -20,7 +20,7 @@ const renderer = {
             type: "size",
             axis: "height",
             field: "Height",
-            valueUnit: "feet"
+            valueUnit: "meters"
         },
         {
             type: "color",
